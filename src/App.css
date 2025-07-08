@@ -1,38 +1,264 @@
-.App {
+body {
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #e0e7ef;
+}
+
+.login-container {
+  background: rgba(30, 41, 59, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 24px;
+  padding: 48px 36px;
+  max-width: 350px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  color: #7fffd4;
+  text-shadow: 0 0 8px #00fff7, 0 0 2px #fff;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center children horizontally */
+}
+
+.login-input,
+.login-button {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 20px 0;
+}
+
+.login-input {
+  width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e0e7ef;
+  font-size: 1.1rem;
+  outline: none;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.04);
+}
+
+.login-button {
+  margin-bottom: 0;
+  display: block;
+  margin: 10px auto 0 auto;
+  /* Center horizontally */
+  width: 100%;
+  /* Match input width */
+  padding: 12px 0;
+  background: linear-gradient(90deg, #00fff7 0%, #7fffd4 100%);
+  color: #1e293b;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 16px 0 rgba(0, 255, 255, 0.15);
+  transition: background 0.2s, color 0.2s;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background: linear-gradient(90deg, #7fffd4 0%, #00fff7 100%);
+  color: #0f2027;
+}
+
+.login-link {
+  margin-top: 18px;
+  color: #7fffd4;
+  /* Futuristic aqua */
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.login-link:hover {
+  color: #00fff7;
+  text-decoration: underline;
+}
+
+.chat-window-container {
+  background: rgba(30, 41, 59, 0.92);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 24px;
+  padding: 32px 24px 24px 24px;
+  max-width: 480px;
+  min-height: 600px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.chat-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  color: #7fffd4;
+  text-shadow: 0 0 8px #00fff7, 0 0 2px #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 18px;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.message {
+  max-width: 80%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 1.08rem;
+  word-break: break-word;
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.04);
 }
 
-.App-header {
-  background-color: #282c34;
+.message.user {
+  align-self: flex-end;
+  background: linear-gradient(90deg, #7fffd4 0%, #00fff7 100%);
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e0e7ef;
+  font-weight: 400;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e0e7ef;
+  font-size: 1.1rem;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.chat-input:focus {
+  background: rgba(127, 255, 212, 0.12);
+  box-shadow: 0 0 8px #00fff7;
+}
+
+.send-button {
+  padding: 0 24px;
+  background: linear-gradient(90deg, #00fff7 0%, #7fffd4 100%);
+  color: #1e293b;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 16px 0 rgba(0, 255, 255, 0.15);
+  transition: background 0.2s, color 0.2s;
+}
+
+.send-button:hover {
+  background: linear-gradient(90deg, #7fffd4 0%, #00fff7 100%);
+  color: #0f2027;
+}
+
+.home-container {
   min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #e0e7ef;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.home-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #7fffd4;
+  text-shadow: 0 0 16px #00fff7, 0 0 4px #fff;
+  margin-bottom: 18px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-subtitle {
+  font-size: 1.4rem;
+  color: #e0e7ef;
+  margin-bottom: 36px;
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.home-actions {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.home-btn {
+  padding: 16px 38px;
+  background: linear-gradient(90deg, #00fff7 0%, #7fffd4 100%);
+  color: #1e293b;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 24px 0 rgba(0, 255, 255, 0.15);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.home-btn:hover {
+  background: linear-gradient(90deg, #7fffd4 0%, #00fff7 100%);
+  color: #0f2027;
+  transform: translateY(-2px) scale(1.04);
+}
+
+a {
+  color: #7fffd4;
+  /* Futuristic aqua */
+  text-decoration: underline;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #00fff7;
 }

@@ -1,11 +1,17 @@
-function App() { 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import ChatWindow from './components/ChatWindow';
+import Home from './components/Home';
+
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to the AI Chatbot</h1>
-        <p>This is a simple chatbot application.</p>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/chat" element={<ChatWindow />} />
+      </Routes>
+    </Router>
   );
 }
 
